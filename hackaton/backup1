@@ -1,0 +1,51 @@
+const Discord = require('discord.js');
+const client = new Discord.Client();
+
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
+
+});
+
+tarefa = ["feijao","teste"];
+
+usuario = [];
+
+client.on('message', message => {
+  // If the message is "ping"
+  message.content.toLocaleLowerCase();
+
+  if (message.content === 'tarefa') {
+    // Send "pong" to the same channel
+    for(t in tarefa){
+      if(usuario[t] == null){
+          message.channel.sendMessage(t+" - "+tarefa[t]);
+      }else{
+          message.channel.sendMessage(t+" - "+tarefa[t]+" - "+usuario[t]);
+      }
+    }
+  }
+
+  escolher = message.content.split(" ");
+  if (escolher[0] === 'escolher') {
+      usuario[escolher[1]] = message.author.username;
+      console.log(usuario);
+  }
+
+
+  if (message.content === 'minha tarefa') {
+    var x;
+    message.channel.sendMessage("Suas tarefas"1);
+    for(x in tarefa){
+      if(usuario[x] == message.author.username){
+        message.channel.sendMessage(tarefa[x]);
+      }
+    }
+  }
+
+});
+  
+
+
+
+
+client.login('NDQxMzg4NzU3MjUwMzQyOTMy.Dc-Q4g.S5BCbC3E7ppUrCAQTNA4B-00CSg');

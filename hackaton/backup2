@@ -1,0 +1,101 @@
+const Discord = require('discord.js');
+const client = new Discord.Client();
+
+/*
+//iniciar variaveis
+var tarefa = {
+  'id1' : {
+      'descricao' : 'programar o feijao',
+      'habilidades' : ["programar","jogar"],
+      'status' : 'disponivel'
+  },
+  'id2' : {
+      'descricao' : 'programar teste',
+      'habilidades' : ["programar","jogar"],
+      'status' : 'disponivel'
+  }
+};
+*/
+
+'use strict';
+
+const fs = require('fs');
+
+let rawdata = fs.readFileSync('file.json');  
+let tarefa = JSON.parse(rawdata);  
+console.log(tarefa);  
+
+
+
+
+
+
+
+
+
+
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
+  console.log("\n todas as tarefas e suas descrições");
+var t,n;
+  for(t in tarefa){
+    console.log(tarefa[t].descricao);
+    console.log("Listando habilidades para tarefa");
+    for(n in tarefa[t].habilidades){
+      console.log(tarefa[t].habilidades[n]);
+    }
+  }
+});
+
+//tarefa = ["feijao","teste"];
+
+
+
+
+usuario = [];
+
+client.on('message', message => {
+  // If the message is "ping"
+  message.content.toLocaleLowerCase();
+
+  escolher = message.content.split(" ");
+
+  if (message.content === 'tarefa') {
+    // Send "pong" to the same channel
+    for(t in tarefa){
+      if(usuario[t] == null){
+          message.channel.sendMessage(t+" - "+tarefa[t]);
+      }else{
+          message.channel.sendMessage(t+" - "+tarefa[t]+" - "+usuario[t]);
+      }
+    }
+  }
+
+  if (escolher[0] === 'escolher') {
+      usuario[escolher[1]] = message.author.username;
+      console.log(usuario);
+  }
+
+
+  if (message.content === 'minha tarefa') {
+    var x;
+    message.channel.sendMessage("Suas tarefas");
+    for(x in tarefa){
+      if(usuario[x] == message.author.username){
+        message.channel.sendMessage(tarefa[x]);
+      }
+    }
+  }
+
+  if(escolher[0] == "!habilidades"){
+    message.channel.sendMessage(escolher[escolher.length - 1]);
+    
+  }
+
+});
+  
+
+
+
+
+client.login('NDQxMzg4NzU3MjUwMzQyOTMy.Dc-Q4g.S5BCbC3E7ppUrCAQTNA4B-00CSg');

@@ -1,0 +1,262 @@
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.fadeIn {
+    animation: fadeIn 1s ease-in-out;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Poppins-Regular, sans-serif;
+    font-size: 14px;
+    padding-bottom: 90px;
+
+}
+
+header {
+    background-color: #FC9F00;
+    height: 10em;
+    color: #FFF;
+    padding: 20px;
+    margin-bottom: 1em;
+}
+
+header h1 {
+    font-size: 2em;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+header h2 {
+    font-size: 2em;
+    display: inline-block;
+    vertical-align: middle;
+
+}
+
+header .container:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.container {
+    width: 60%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+section {
+    margin: 2em 0;
+    overflow: hidden;
+}
+
+section h2 {
+    color: #57b846;
+    font-size: 2em;
+    display: block;
+    padding-bottom: .5em;
+    border-bottom: 1px solid #ccc;
+    margin-top: 1em;
+    margin-bottom: .5em;
+}
+
+table {
+    margin-top: 20px;
+    width: 100%;
+    margin-bottom: 2em;
+    table-layout: fixed;
+
+
+}
+
+td,
+th {
+    font-size: .9em;
+    padding: .7em;
+    margin: 0;
+    border-bottom: solid #E2E2E2 .1px;
+    text-align: center;
+    color: #141414;
+}
+
+th {
+    color: white;
+    font-weight: bold;
+    background-color: #EF9F37;
+}
+
+label {
+    color: #555;
+    display: block;
+    margin-bottom: .2em;
+}
+
+.campo {
+    margin: 0;
+    padding-bottom: 1em;
+    width: 100%;
+    border: none;
+    border-bottom: .5px solid gray;
+    padding: .7em;
+}
+
+.campo-pequeno {
+    display: inline-block;
+    padding: .2em;
+    padding-right: .5em;
+    width: 20%;
+    margin-left: 3em;
+}
+
+.campo-medio {
+    display: inline-block;
+    padding-right: .5em;
+}
+
+.grupo {
+    width: 32%;
+    display: inline-block;
+    padding: 10px 0px;
+    margin: 10px;
+}
+
+button {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 25px;
+    background: #57b846;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 25px;
+    transition: all 0.4s;
+    padding: .5em 2em;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin: 0;
+    margin-top: -3px;
+    width: 20%;
+    display: block;
+    margin: 10px 0px;
+
+
+}
+
+button:hover {
+    color: green;
+    background-color: white;
+}
+
+button:active {
+    margin-top: 0px;
+    border: 0;
+}
+
+button[disabled=disabled],
+button:disabled {
+    background-color: gray;
+    border-color: darkgray;
+
+}
+
+.adicionar-tarefa {
+    margin-top: 30px;
+}
+
+.campo-invalido {
+    border: 1px solid red;
+}
+
+.tarefa-invalido {
+    background-color: lightcoral;
+}
+
+#mensagens-erro {
+    color: red;
+}
+
+.fadeOut {
+    opacity: 0;
+    transition: 0.5s;
+}
+
+#filtrar-tabela {
+    border:none;
+    width: 200px;
+    height: 35px;
+    margin-bottom: 10px;
+    border-bottom: solid .1px gray;
+}
+
+.invisivel {
+    display: none;
+}
+
+
+.check {
+    display: inline-block;
+    width: 2em;
+}
+
+label {
+    font-weight: bold;
+}
+
+img {
+    height: auto;
+    max-width: 150px;
+}
+
+#form-adiciona {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+
+.btn-adicionar{
+    display: flex;
+    justify-content: center;
+}
